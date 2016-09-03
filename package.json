@@ -1,0 +1,25 @@
+{
+  "name": "node-grade",
+  "version": "1.0.0",
+  "description": "get two dominant colours in supplied images file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayZOU/node-grade.git"
+  },
+  "author": "jayzou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayZOU/node-grade/issues"
+  },
+  "homepage": "https://github.com/jayZOU/node-grade#readme",
+  "dependencies": {
+    "jpeg-js": "^0.2.0",
+    "mime-types": "^2.1.11",
+    "ndarray": "^1.0.18",
+    "webpack": "^1.13.2"
+  }
+}
