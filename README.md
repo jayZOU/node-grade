@@ -23,5 +23,10 @@ var grade = new Grade({
 */
 ```
 
+##dev
+
+    git clone https://github.com/jayZOU/node-grade.git
+    npm install
+    node index.js
 
   [1]: http://jayzou.github.io/demo/node-grade/index.html

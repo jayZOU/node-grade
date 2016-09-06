@@ -1,6 +1,6 @@
 {
   "name": "node-grade",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "get two dominant colours in supplied images file",
   "main": "./src/node-grade.js",
   "scripts": {
