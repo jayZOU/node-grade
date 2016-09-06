@@ -2,7 +2,7 @@
   "name": "node-grade",
   "version": "1.0.0",
   "description": "get two dominant colours in supplied images file",
-  "main": "index.js",
+  "main": "./src/node-grade.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
