@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jayZOU/node-grade#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "jpeg-js": "^0.2.0",
     "mime-types": "^2.1.11",
     "ndarray": "^1.0.18",

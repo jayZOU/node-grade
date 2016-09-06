@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="This node module produces complimentary gradients generated from the top 2 dominant colours in supplied images">
+    <title>node-Grade</title>
+    <link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'>
+    <link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
+    <style media="screen">
+        * {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            background: #fff;
+            color: #34495e;
+        }
+
+        h1 {
+            color: #2C3E50;
+        }
+
+        h3 {
+            color: #22313F;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .gradient-wrap {
+            box-shadow: 0 1px 2px rgba(5,30,50,.6);
+        }
+
+        .gradient-wrap img {
+            box-shadow: 0 1px 2px rgba(5,30,50,.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container center p2 pt4">
+        <h1 class="mb1" style="text-align:center">node-grade</h1>
+        <h3 class="h3 mb4 max-width-3 mx-auto" style="text-align:center;font-size:1.75rem;color:#22313F">serve端的模块可以预处理图片背景，代替图片未加载之前的空白背景</h3>
+        <div class="gradient-wrap p4 mb2 mr1 inline-block" style="">
+            <img src="./inside-out.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 ml1 inline-block" style="">
+            <img src="./up.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 mr1 inline-block" style="">
+            <img src="./finding-dory.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 ml1 inline-block" style="">
+            <img src="./wall-e.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 mr1 inline-block" style="">
+            <img src="./stanger-things.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 ml1 inline-block" style="">
+            <img src="./true-detective.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 mr1 inline-block" style="">
+            <img src="./drive.jpg" alt="" />
+        </div>
+        <div class="gradient-wrap p4 mb2 ml1 inline-block" style="">
+            <img src="./only-god-forgives.jpg" alt="" />
+        </div>
+        <div class="left-align max-width-3 mx-auto mb4">
+        <p style="text-align:left"><strong>user:</strong></p>
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><span class="hljs-keyword">var</span> Grade = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./src/node-grade'</span>);<br><span class="hljs-keyword">var</span> grade = <span class="hljs-keyword">new</span> Grade({<br>     img : <span class="hljs-string">'./res/inside-out.jpg'</span><br> });<br><span class="hljs-comment">/*<br>background-image: -webkit-linear-gradient(135deg,rgb(107,60,154) 0%,rgb(59,1,152) 75%);<br>background-image: linear-gradient(135deg,rgb(107,60,154)<br>0%,rgb(59,1,152) 75%)；<br>*/</span><br></code></pre>
+</div>
+
+        <div class="left-align max-width-3 mx-auto mb4">
+<p><strong>github:</strong></p>
+<div class="flex justify-center mb1">
+<a class="github-button" href="https://github.com/jayZOU/node-grade" data-style="mega" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+<p style="margin-right:1.5rem;"></p>
+<a class="github-button" href="https://github.com/jayZOU/node-grade/archive/master.zip" data-style="mega" aria-label="Download ntkme/github-buttons on GitHub">Download</a>
+</div>
+</div>
+    </div>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

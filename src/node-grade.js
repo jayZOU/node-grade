@@ -1,4 +1,5 @@
 'use strict';
+var prefixes = ['webkit'];
 
 var fs = require('fs'),
 	mime = require('mime-types'),
@@ -47,15 +48,34 @@ Grade.prototype = {
 			opts = self.opts,
 			params = self.params;
 		var chunked = self.getChunkedImageData();
-		params.gradientProperty = self.getTopValues(self.getUniqValues(chunked));
+		params.gradientProperty = self.getCSSGradientProperty(self.getTopValues(self.getUniqValues(chunked)));
 	},
+
+	getRGBAGradientValues(top) {
+        return top.map((color, index) => {
+            return `rgb(${color.rgba.slice(0, 3).join(',')}) ${index == 0 ? '0%' : '75%'}`
+        }).join(',')
+    },
+
+    getCSSGradientProperty(top) {
+        var val = this.getRGBAGradientValues(top);
+        return prefixes.map(prefix => {
+            return `background-image: -${prefix}-linear-gradient(
+                        135deg,
+                        ${val}
+                    )`
+        }).concat([`background-image: linear-gradient(
+                    135deg,
+                    ${val}
+                )`]).join(';')
+    },
 
 	getChunkedImageData: function() {
 		var self = this,
 			opts = self.opts,
 			params = self.params;
 		var chunked = params.imgData.reduce((ar, it, i) => {
-            const ix = Math.floor(i / opts.perChunk)
+            var ix = Math.floor(i / opts.perChunk)
             if (!ar[ix]) {
                 ar[ix] = []
             }

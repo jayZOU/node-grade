@@ -1,29 +1,33 @@
 var Grade = require('./src/node-grade');
+var express = require('express');
+var fs = require('fs');
 
-var grade = new Grade({
-	img : './res/inside-out.jpg'
+var app = express();
+app.use(express.static('res'));
+
+var htmlTpl = fs.readFileSync('./src/index.html', 'utf8');
+
+var grade = [
+    new Grade({img : './res/inside-out.jpg'}).getColor(),
+    new Grade({img : './res/up.jpg'}).getColor(),
+    new Grade({img : './res/finding-dory.jpg'}).getColor(),
+    new Grade({img : './res/wall-e.jpg'}).getColor(),
+    new Grade({img : './res/stanger-things.jpg'}).getColor(),
+    new Grade({img : './res/true-detective.jpg'}).getColor(),
+    new Grade({img : './res/drive.jpg'}).getColor(),
+    new Grade({img : './res/only-god-forgives.jpg'}).getColor(),
+];
+
+for(var i = 0, len = grade.length; i < len; i++){
+    var htmlTpl = htmlTpl.replace(/style=""/, 'style="' + grade[i] + '"');
+}
+
+fs.writeFileSync('./index.html', htmlTpl, 'utf8');
+
+app.get('/', function (req, res) {
+  res.sendfile('index.html');
 });
 
-var grade1 = new Grade({
-	img : './res/drive.jpg'
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
 });
-// console.log(1111);
-console.log(grade.getColor());
-/*
-[ { rgba: [ '107', '60', '154', '255' ],
-    occurs: 63,
-    brightness: 84.769 },
-  { rgba: [ '59', '1', '152', '255' ],
-    occurs: 98,
-    brightness: 35.556 } ]
-*/
-console.log(grade1.getColor());
-
-/*
-[ { rgba: [ '9', '53', '74', '255' ],
-    occurs: 108,
-    brightness: 42.238 },
-  { rgba: [ '3', '16', '21', '255' ],
-    occurs: 163,
-    brightness: 12.683 } ]
-*/
